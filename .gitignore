@@ -11,3 +11,4 @@ npm-debug.log
 yarn-error.log
 
 resources/views/adminTemp
+.idea/workspace.xml

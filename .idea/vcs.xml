@@ -4,5 +4,7 @@
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/resources/views/admin" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/resources/views/admin/adminator" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/resources/views/adminTemp" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/resources/views/adminTemp/adminator" vcs="Git" />
   </component>
 </project>

@@ -11,6 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/trangchu', function () {
+    return view('admin.user.list');
+});
+
+Route::prefix('admin')->group(function () {
+    Route::get('users', function () {
+        // Matches The "/admin/users" URL
+    });
+});
+
+Route::group(['prefix'=>'user'], function() {
+//    Route::get('/', UserController@getList);
 });

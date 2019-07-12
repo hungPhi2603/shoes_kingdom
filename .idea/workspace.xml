@@ -2,45 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6f788425-b2e0-44fa-a6e1-736c85b03c11" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/assets/1524739aae86f69026689ec798e10ebc.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/dbc7556d44aaa93cc89743f163cc09c4.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/static/fonts/icons/fontawesome/FontAwesome.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/static/fonts/icons/fontawesome/fontawesome-webfont.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/static/fonts/icons/fontawesome/fontawesome-webfont.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/static/fonts/icons/fontawesome/fontawesome-webfont.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/static/fonts/icons/fontawesome/fontawesome-webfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/static/fonts/icons/fontawesome/fontawesome-webfont.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/static/fonts/icons/themify/themify.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/static/fonts/icons/themify/themify.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/static/fonts/icons/themify/themify.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/static/fonts/icons/themify/themify.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/static/images/404.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/static/images/500.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/static/images/bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/static/images/datatables/sort_asc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/static/images/datatables/sort_asc_disabled.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/static/images/datatables/sort_both.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/static/images/datatables/sort_desc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/static/images/datatables/sort_desc_disabled.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/static/images/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/static/images/logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/material-design-iconic-font.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/default.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/vendor.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/user/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/adminTemp/git" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layout/admin.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layout/admin_parts/header.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layout/admin_parts/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/adminator" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/adminTemp/adminator" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/git" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/user/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/adminTemp/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/adminTemp/adminator" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/adminTemp/adminator" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/adminTemp/adminator/src/404.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/adminTemp/adminator/src/500.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/adminTemp/adminator/src/assets/scripts/charts/chartJS/index.js" beforeDir="false" />
@@ -160,7 +124,6 @@
       <change beforePath="$PROJECT_DIR$/resources/views/adminTemp/adminator/src/signup.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/adminTemp/adminator/src/ui.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/adminTemp/adminator/src/vector-maps.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -183,7 +146,7 @@
         <counts>
           <entry key="css" value="2" />
           <entry key="env" value="1" />
-          <entry key="gitignore" value="2" />
+          <entry key="gitignore" value="3" />
           <entry key="html" value="4" />
           <entry key="js" value="2" />
           <entry key="json" value="2" />
@@ -201,7 +164,7 @@
           <entry key="JSON" value="2" />
           <entry key="JavaScript" value="2" />
           <entry key="PHP" value="45" />
-          <entry key="PLAIN_TEXT" value="3" />
+          <entry key="PLAIN_TEXT" value="4" />
           <entry key="SVG" value="2" />
         </counts>
       </usages-collector>
@@ -211,7 +174,7 @@
           <entry key="gitignore" value="6" />
           <entry key="html" value="2" />
           <entry key="json" value="3" />
-          <entry key="php" value="2540" />
+          <entry key="php" value="2593" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -219,7 +182,7 @@
           <entry key="Blade" value="853" />
           <entry key="HTML" value="2" />
           <entry key="JSON" value="3" />
-          <entry key="PHP" value="1687" />
+          <entry key="PHP" value="1740" />
           <entry key="PLAIN_TEXT" value="23" />
         </counts>
       </usages-collector>
@@ -299,17 +262,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+            <state relative-caret-position="153">
+              <caret line="9" column="39" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/adminTemp/adminator/build/index.html">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="10" selection-end-line="634" selection-end-column="7" />
+            <state relative-caret-position="204">
+              <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -617,7 +580,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="ven&#9;FILE&#9;file://D:/xampp/htdocs/shoes_kingdom/public/js/vendor.js&#10;bun&#9;null&#9;null&#10;logo.&#9;FILE&#9;file://D:/xampp/htdocs/shoes_kingdom/resources/views/adminTemp/adminator/build/assets/static/images/logo.png&#10;com&#9;FILE&#9;file://D:/xampp/htdocs/shoes_kingdom/composer.json&#10;a&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="git&#9;FILE&#9;file://D:/xampp/htdocs/shoes_kingdom/.gitignore&#10;ven&#9;FILE&#9;file://D:/xampp/htdocs/shoes_kingdom/public/js/vendor.js&#10;bun&#9;null&#9;null&#10;logo.&#9;FILE&#9;file://D:/xampp/htdocs/shoes_kingdom/resources/views/adminTemp/adminator/build/assets/static/images/logo.png&#10;com&#9;FILE&#9;file://D:/xampp/htdocs/shoes_kingdom/composer.json&#10;a&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../hus_news" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -655,12 +618,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1562662994698</updated>
-      <workItem from="1562662996675" duration="46188000" />
+      <workItem from="1562662996675" duration="46526000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46188000" />
+    <option name="totallyTimeSpent" value="46526000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -917,13 +880,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Product_status.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -1045,10 +1001,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+        <state relative-caret-position="153">
+          <caret line="9" column="39" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
         </state>
       </provider>
     </entry>

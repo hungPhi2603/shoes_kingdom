@@ -47,7 +47,7 @@
             <li class="nav-item">
                 <a class="sidebar-link" href="admin/order">
                     <span class="icon-holder"><i class="c-deep-purple-500 ti-notepad"></i> </span>
-                    <span class="title">Chat</span>
+                    <span class="title">Orders</span>
                 </a>
             </li>
             <li class="nav-item">
@@ -57,9 +57,9 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="sidebar-link" href="forms.html">
+                <a class="sidebar-link" href="admin/discount">
                     <span class="icon-holder"><i class="c-light-blue-500 ti-pencil"></i> </span>
-                    <span class="title">Forms</span>
+                    <span class="title">Discount</span>
                 </a>
             </li>
 

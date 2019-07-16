@@ -23,13 +23,13 @@
                         </div>
                     @endif
 
-                    @if(session('thongbao'))
+                    @if(session('alert'))
                         <div class="alert alert-success">
-                            {{session('thongbao')}}
+                            {{session('alert')}}
                         </div>
                     @endif
 
-                    <form action="admin/category/create" method="post" enctype="multipart/form-data">
+                    <form action="admin/user/create" method="post" enctype="multipart/form-data">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <div class="form-group">
                             <div class="col-md-6 mb-3">
@@ -46,36 +46,37 @@
                         <div class="form-group">
                             <div class="col-md-6 mb-3">
                                 <label for="validationCustom01"><h6>Password</h6></label>
-                                <input type="text" class="form-control" id="validationCustom01" name="password" placeholder="password..." required>
+                                <input type="password" class="form-control" id="validationCustom01" name="password" placeholder="password..." required>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <div class="col-md-6 mb-3">
                                 <label for="validationCustom01"><h6>Repassword</h6></label>
-                                <input type="text" class="form-control" id="validationCustom01" name="name" placeholder="password again" required>
+                                <input type="password" class="form-control" id="validationCustom01" name="passwordAgain" placeholder="passwordAgain" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-md-6 mb-3">
                                 <label for="validationCustom01"><h6>Address</h6></label>
-                                <input type="text" class="form-control" id="validationCustom01" name="address" placeholder="address..." >
+                                <input type="text" class="form-control" id="validationCustom01" name="address" placeholder="address..." required>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-md-6 mb-3">
                                 <label for="validationCustom01"><h6>Phone</h6></label>
-                                <input type="text" class="form-control" id="validationCustom01" name="phone" placeholder="phone number...">
+                                <input type="text" class="form-control" id="validationCustom01" name="phone" placeholder="phone number..." required>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-md-6 mb-3">
-                                <label for="validationCustom01"><h6>Role</h6></label>
-                                <select id="inputState" class="form-control">
-                                    <option selected="selected" value="">Choose...</option>
-                                    <option value="admin">Admin</option>
-                                    <option value="user">User</option>
-                                </select>
+                                <label><h6>Role: </h6></label><br>
+                                <label class="radio-inline">
+                                    <input type="radio" name="role" value="user" checked="">User
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="role" value="admin">Admin
+                                </label>
                             </div>
                         </div>
                         <div class="form-group">
@@ -85,8 +86,8 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <input class="btn btn-primary" type="submit" value="Thêm">
-                            <a class="btn btn-link" href="admin/user">Trở lại</a>
+                            <input class="btn btn-primary" type="submit" value="Create">
+                            <a class="btn btn-link" href="admin/user">Back</a>
                         </div>
                     </form>
                 </div>

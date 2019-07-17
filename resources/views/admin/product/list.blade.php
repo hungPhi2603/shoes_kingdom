@@ -11,7 +11,9 @@
                                 <a href="admin/product/create" class="btn cur-p btn-primary">
                                     <i class="zmdi zmdi-plus"></i>+ Create new product
                                 </a>
-
+                                <a href="admin/product_status/" class="btn cur-p btn-success float-right">
+                                    <i class="zmdi zmdi-plus"></i>Show all status
+                                </a>
                             </div>
                             <table id="dataTable" class="table table-striped table-bordered" cellspacing="0" width="100%">
                                 <thead>

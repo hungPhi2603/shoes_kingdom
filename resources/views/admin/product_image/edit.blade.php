@@ -8,7 +8,7 @@
                 <!-- Page Header -->
                 <div class="col-lg-12">
 
-                    <h2 class="c-grey-900">Edit "{{ $product_status->product->title }}" information</h2>
+                    <h2 class="c-grey-900">Edit "{{ $product_image->product->title }}" information</h2>
                 </div>
                 <!--End Page Header -->
             </div>
@@ -29,30 +29,19 @@
                         </div>
                     @endif
 
-                    <form action="admin/product/{{ $product_status->product_id }}/product_status/edit/{{ $product_status->id }}" method="post">
+                    <form action="admin/product/{{ $product_image->product_id }}/product_image/edit/{{ $product_image->id }}" method="post" enctype="multipart/form-data">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <div class="form-group">
                             <div class="col-md-6 mb-3">
-                                <label for="validationCustom01"><h6>Size</h6></label>
-                                <input type="text" class="form-control" name="size" value="{{ $product_status->size }}" disabled>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-md-6 mb-3">
-                                <label for="validationCustom01"><h6>Available Quantity</h6></label>
-                                <input type="text" class="form-control" name="quantity" value="{{ $product_status->quantity_available }}">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-md-6 mb-3">
-
-                                <input type="hidden" class="form-control" name="product_id" placeholder="quantity" value="{{ $product_status->product->id }}">
+                                <label for="validationCustom01"><h3>Image</h3></label>
+                                <input type="file" class="form-control" name="image" value="{{ $product_image->filename }}" >
+                                <img src="storage/upload/product/{{ $product_image->filename }}" alt="" width="200px">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <input class="btn btn-primary" type="submit" value="Edit">
-                            <a class="btn btn-link" href="admin/product/{{ $product_status->product_id }}/product_status/">Back</a>
+                            <a class="btn btn-link" href="admin/product/{{ $product_image->product_id }}/product_image/">Back</a>
                         </div>
                     </form>
                 </div>

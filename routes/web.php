@@ -92,4 +92,9 @@ Route::group(['prefix'=>'admin'], function() {
 
         Route::get('/delete/{id}', 'CategoryController@delete');
     });
+
+    Route::group(['prefix'=>'product_status'], function() {
+        Route::get('/', 'Product_statusController@getAllStatus');
+
+    });
 });

@@ -29,30 +29,18 @@
                         </div>
                     @endif
 
-                    <form action="admin/product/{{ $product->id }}/product_status/create" method="post">
+                    <form action="admin/product/{{ $product->id }}/product_image/create" method="post" enctype="multipart/form-data">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <div class="form-group">
                             <div class="col-md-6 mb-3">
-                                <label for="validationCustom01"><h6>Size</h6></label>
-                                <input type="text" class="form-control" name="size" placeholder="size..." required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-md-6 mb-3">
-                                <label for="validationCustom01"><h6>Quantity available</h6></label>
-                                <input type="text" class="form-control" name="quantity" placeholder="quantity" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-md-6 mb-3">
-
-                                <input type="hidden" class="form-control" name="product_id" placeholder="quantity" value="{{ $product->id }}">
+                                <label for="validationCustom01"><h3>Image</h3></label>
+                                <input type="file" class="form-control" name="image" required>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <input class="btn btn-primary" type="submit" value="Create">
-                            <a class="btn btn-link" href="admin/product/{{ $product->id }}/product_status">Back</a>
+                            <a class="btn btn-link" href="admin/product/{{ $product->id }}/product_image">Back</a>
                         </div>
                     </form>
                 </div>

@@ -12,7 +12,8 @@ class Product_statusController extends Controller
 {
     function getList($productID) {      /*get status for 1 product*/
         $product_status= Product_status::all()->where('product_id', $productID);
-        return view('admin.product_status.list', ['product_status'=>$product_status, 'productID'=>$productID]);
+        $product= Product::find($productID);
+        return view('admin.product_status.list', ['product_status'=>$product_status, 'product'=>$product]);
     }
 
     function getCreate($productID) {

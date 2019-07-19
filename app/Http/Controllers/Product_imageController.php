@@ -11,7 +11,8 @@ class Product_imageController extends Controller
 {
     function getList($productID) {
         $product_image= Product_image::all()->where('product_id', $productID);
-        return view('admin.product_image.list', ['product_image'=>$product_image, 'productID'=>$productID]);
+        $product= Product::find($productID);
+        return view('admin.product_image.list', ['product_image'=>$product_image, 'product'=>$product]);
     }
 
     function getCreate($productID) {

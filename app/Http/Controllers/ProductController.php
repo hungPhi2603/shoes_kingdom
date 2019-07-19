@@ -63,7 +63,15 @@ class ProductController extends Controller
 
     function delete($id) {
         $product= Product::find($id);
-        $product->delete();
-        return redirect('admin/product');
+        $c= $product->product_image();
+//        $product->product_image()->delete();            /*another way is adding onDelete('cascade') on foreign key line in Schema*/
+//        $product->product_status()->delete();            /*another way is adding onDelete('cascade') on foreign key line in Schema*/
+        if ($c !== null) {
+            echo "<pre>";
+            var_dump($c);
+            echo "<pre>";
+        }
+        //$product->delete();
+        //return redirect('admin/product');
     }
 }

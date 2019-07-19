@@ -3,7 +3,7 @@
         <div class="sidebar-logo">
             <div class="peers ai-c fxw-nw">
                 <div class="peer peer-greed">
-                    <a class="sidebar-link td-n" href="index.html">
+                    <a class="sidebar-link td-n" href="admin">
                         <div class="peers ai-c fxw-nw">
                             <div class="peer">
                                 <div class="logo"><img src="assets/static/images/logo.png" alt=""></div>

@@ -6,9 +6,9 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="bgc-white bd bdrs-3 p-20 mB-20">
-                            <h4 class="c-grey-900 mB-20">Product Status List</h4>
+                            <h4 class="c-grey-900 mB-20">{{ $product->title }} Status List</h4>
                             <div class="table-data__tool-right" style="margin-bottom: 30px">
-                                <a href="admin/product/{{ $productID }}/product_status/create" class="btn cur-p btn-primary">
+                                <a href="admin/product/{{ $product->id }}/product_status/create" class="btn cur-p btn-primary">
                                     <i class="zmdi zmdi-plus"></i>+ Create new status
                                 </a>
 

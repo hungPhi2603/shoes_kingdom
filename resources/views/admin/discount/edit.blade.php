@@ -40,23 +40,28 @@
                         <div class="form-group">
                             <div class="col-md-6 mb-3" id="type">
                                 <label><h6>Type of discount: </h6></label><br>
-                                <label class="radio-inline">
-                                    <input type="radio" name="type" value="multiply"
-                                           <?php if ($discount->type === 'multiply') echo "checked= ''"?>
 
-                                       id="multiply">Multiply
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="type" value="minus" <?php if ($discount->type === 'minus') echo "checked= ''"?> id="minus">Minus
-                                </label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="type" id="multiply" value="multiply" <?php if ($discount->type === 'multiply') echo "checked= ''"?>>
+                                    <label class="form-check-label" for="multiply">Multiply</label>
+                                </div>
+
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="type" id="minus" value="minus" <?php if ($discount->type === 'minus') echo "checked= ''"?>>
+                                    <label class="form-check-label" for="minus">Minus</label>
+                                </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-md-6 mb-3">
                                 <label for="validationCustom01"><h6>Value</h6></label>
-                                <input type="text" class="form-control" name="value" value="{{ $discount->value }}" >
-                                <span id="currency"><?= ($discount->type === 'minus')? "VND" : "%"?></span>
 
+                                <div class="input-group">
+                                    <input type="text" class="form-control" name="value" value="{{ $discount->value }}">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text" id="currency"><?= ($discount->type === 'minus')? "VND" : "%"?></span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="form-group">

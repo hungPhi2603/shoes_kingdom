@@ -52,16 +52,16 @@ Route::group(['prefix'=>'admin'], function() {
         Route::get('/delete/{id}', 'ProductController@delete');
 
         Route::group(['prefix'=>'{productID}/product_status'], function () {
-           Route::get('/', 'Product_statusController@getList');
-           Route::get('/list', 'Product_statusController@getList');
+            Route::get('/', 'Product_statusController@getList');
+            Route::get('/list', 'Product_statusController@getList');
 
-           Route::get('/create', 'Product_statusController@getCreate');
-           Route::post('/create', 'Product_statusController@postCreate');
+            Route::get('/create', 'Product_statusController@getCreate');
+            Route::post('/create', 'Product_statusController@postCreate');
 
-           Route::get('/edit/{id}', 'Product_statusController@edit');
-           Route::post('/edit/{id}', 'Product_statusController@update');
+            Route::get('/edit/{id}', 'Product_statusController@edit');
+            Route::post('/edit/{id}', 'Product_statusController@update');
 
-           Route::get('/delete/{id}', 'Product_statusController@delete');
+            Route::get('/delete/{id}', 'Product_statusController@delete');
 
         });
 
@@ -98,3 +98,6 @@ Route::group(['prefix'=>'admin'], function() {
 
     });
 });
+
+
+Route::get('/trangchu/', 'PageController@home');

@@ -10,7 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('admin/login', 'UserController@getLoginAdmin');
+Route::post('admin/login', 'UserController@postLoginAdmin');
+Route::get('admin/logout', 'UserController@getLogoutAdmin');
 
 Route::group(['prefix'=>'admin'], function() {
     Route::group(['prefix'=>'user'], function() {
@@ -100,4 +102,7 @@ Route::group(['prefix'=>'admin'], function() {
 });
 
 
-Route::get('/trangchu/', 'PageController@home');
+Route::get('/home/', 'PageController@home');
+Route::get('/product/{id}', 'PageController@productDetail');
+Route::get('/ajax/quan/{id}', 'AjaxController@getQuantity');
+Route::get('/ajax/quan_max/{id}', 'AjaxController@getQuantityMax');

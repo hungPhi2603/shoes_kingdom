@@ -1,11 +1,7 @@
 @extends('layout.pages')
 
 @section('content')
-    <?php echo "<pre>";
-    print_r($image);
-    f
-    echo "<pre>";
-    die('22222222')?>
+
     <!-- start banner Area -->
     <section class="banner-area">
         <div class="container">
@@ -194,12 +190,14 @@
                     @foreach($lastestProducts as $lstPr)
                     <div class="col-lg-3 col-md-6">
                         <div class="single-product">
-                            <img class="img-fluid" src="storage/upload/product/{{ $lstPr->product_image[1] }}" alt="">
+                            <img class="img-fluid" src="storage/upload/product/{{ $lstPr->product_image()->first()->filename }}" alt="" height="225px">
                             <div class="product-details">
-                                <h6>{{ $lstPr->title }}</h6>
+                                <a href=""><h6 class="text-truncate">{{ $lstPr->title }}</h6></a>
                                 <div class="price">
-                                    <h6>$150.00</h6>
-                                    <h6 class="l-through">$210.00</h6>
+                                    <h6>{{ number_format($lstPr->promotion_price) }} ₫</h6>
+                                    @if($lstPr->unit_price > $lstPr->promotion_price)
+                                        <h6 class="l-through">{{ number_format($lstPr->unit_price) }} ₫</h6>
+                                    @endif
                                 </div>
                                 <div class="prd-bottom">
 
@@ -211,11 +209,7 @@
                                         <span class="lnr lnr-heart"></span>
                                         <p class="hover-text">Wishlist</p>
                                     </a>
-                                    <a href="" class="social-info">
-                                        <span class="lnr lnr-sync"></span>
-                                        <p class="hover-text">compare</p>
-                                    </a>
-                                    <a href="" class="social-info">
+                                    <a href="product/{{ $lstPr->id }}" class="social-info">
                                         <span class="lnr lnr-move"></span>
                                         <p class="hover-text">view more</p>
                                     </a>
@@ -548,37 +542,24 @@
                 <div class="col-lg-6 no-padding exclusive-right">
                     <div class="active-exclusive-product-slider">
                         <!-- single exclusive carousel -->
-                        <div class="single-exclusive-slider">
-                            <img class="img-fluid" src="page/img/product/e-p1.png" alt="">
+                        @foreach($lastestProducts as  $lstPr)
+                            @if($lstPr->unit_price > $lstPr->promotion_price)
+                            <div class="single-exclusive-slider">
+                            <img class="img-fluid" src="storage/upload/product/{{ $lstPr->product_image()->first()->filename }}" alt="">
                             <div class="product-details">
                                 <div class="price">
-                                    <h6>$150.00</h6>
-                                    <h6 class="l-through">$210.00</h6>
+                                    <h6>{{ number_format($lstPr->promotion_price) }} ₫</h6>
+                                    <h6 class="l-through">{{ number_format($lstPr->unit_price) }} ₫</h6>
                                 </div>
-                                <h4>addidas New Hammer sole
-                                    for Sports person</h4>
+                                <h4>{{ $lstPr->title }}</h4>
                                 <div class="add-bag d-flex align-items-center justify-content-center">
                                     <a class="add-btn" href=""><span class="ti-bag"></span></a>
                                     <span class="add-text text-uppercase">Add to Bag</span>
                                 </div>
                             </div>
                         </div>
-                        <!-- single exclusive carousel -->
-                        <div class="single-exclusive-slider">
-                            <img class="img-fluid" src="page/img/product/e-p1.png" alt="">
-                            <div class="product-details">
-                                <div class="price">
-                                    <h6>$150.00</h6>
-                                    <h6 class="l-through">$210.00</h6>
-                                </div>
-                                <h4>addidas New Hammer sole
-                                    for Sports person</h4>
-                                <div class="add-bag d-flex align-items-center justify-content-center">
-                                    <a class="add-btn" href=""><span class="ti-bag"></span></a>
-                                    <span class="add-text text-uppercase">Add to Bag</span>
-                                </div>
-                            </div>
-                        </div>
+                            @endif
+                        @endforeach
                     </div>
                 </div>
             </div>

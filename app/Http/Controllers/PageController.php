@@ -12,18 +12,19 @@ class PageController extends Controller
     public function __construct()
     {
         $category= Category::all();
-
+        $productSaleOff= Product::whereColumn('unit_price', '>', 'promotion_price')->take(9)->get();
         view()->share('category', $category);
+        view()->share('productSaleOff', $productSaleOff);
     }
 
     function home() {
-        $lastestProducts= Product::all()->sortByDesc('id')->get(1);/*orderBy('created_at', 'DESC')->take(1)->get();*/
-        $image= $lastestProducts->product_image;
-        return view('pages.home', ['lastestProducts'=>$lastestProducts, 'image'=>$image]);
+        $lastestProducts= Product::all()->sortByDesc('id')->take(8);
+        return view('pages.home', ['lastestProducts'=>$lastestProducts]);
     }
 
-    function getCreate() {
-        return view('admin.category.create');
+    function productDetail($id) {
+        $product= Product::find($id);
+        return view('pages.productDetail', compact('product')/*['product'=>$product]*/);
     }
 
     function postCreate(Request $request) {

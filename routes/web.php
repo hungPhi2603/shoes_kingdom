@@ -10,11 +10,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('admin/login', 'UserController@getLoginAdmin');
+Route::get('admin/login', 'UserController@getLoginAdmin')->name('login');
 Route::post('admin/login', 'UserController@postLoginAdmin');
-Route::get('admin/logout', 'UserController@getLogoutAdmin');
+Route::get('admin/logout', 'UserController@getLogoutAdmin')->name('logout');
 
-Route::group(['prefix'=>'admin'], function() {
+Route::group(['prefix'=>'admin', 'middleware'=> 'checkAdmin'], function() {
     Route::group(['prefix'=>'user'], function() {
         Route::get('/', 'UserController@getList');
         Route::get('/list', 'UserController@getList');
@@ -102,7 +102,11 @@ Route::group(['prefix'=>'admin'], function() {
 });
 
 
-Route::get('/home/', 'PageController@home');
+Route::get('/home', 'PageController@home');
 Route::get('/product/{id}', 'PageController@productDetail');
 Route::get('/ajax/quan/{id}', 'AjaxController@getQuantity');
 Route::get('/ajax/quan_max/{id}', 'AjaxController@getQuantityMax');
+
+//Auth::routes();
+
+//Route::get('/home', 'HomeController@index')->name('home');

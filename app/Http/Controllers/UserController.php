@@ -92,7 +92,7 @@ class UserController extends Controller
     }
 
     function getLoginAdmin() {
-        return view('admin.login');
+        return view('auth.login');
     }
 
     function postLoginAdmin(Request $request) {
@@ -101,8 +101,14 @@ class UserController extends Controller
             'password'=> 'required'
         ]);
 
-        if (Auth::attempt(['email'=> $request->email, 'password'=> $request->password], $remember)) {
-
+        if (Auth::attempt(['email'=> $request->email, 'password'=> $request->password, 'role'=> 'admin'])) {
+            return redirect('/admin/user');
         }
+        else return redirect('/admin/login')->with('alert', 'Email or password is incorrect');
+    }
+
+    public function getLogoutAdmin() {
+        Auth::logout();
+        return redirect('/admin/login');
     }
 }

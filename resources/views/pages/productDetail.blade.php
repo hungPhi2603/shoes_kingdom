@@ -65,7 +65,7 @@
                                         class="reduced items-count" type="button"><i class="lnr lnr-chevron-down"></i></button>
                             </div>
                             <div class="card_area d-flex align-items-center">
-                                <a class="primary-btn" href="">Add to Cart</a>
+                                <a class="primary-btn" href="add-to-cart/{{ $product->id }}">Add to Cart</a>
                                 <a class="icon_btn" href="#"><i class="lnr lnr lnr-heart"></i></a>
                             </div>
                         </form>

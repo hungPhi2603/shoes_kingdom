@@ -13,7 +13,7 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
                     <ul class="nav navbar-nav menu_nav ml-auto">
-                        <li class="nav-item active"><a class="nav-link" href="trangchu">Home</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="home">Home</a></li>
                         @foreach( $category as $cate)
                             <li class="nav-item submenu">
                                 <a href="category/{{ changeTitle($cate->name) }}" class="nav-link" role="button" aria-haspopup="true" aria-expanded="false">{{ $cate->name }}</a>
@@ -32,7 +32,13 @@
                             </ul>
                         </li>
 
-                        <li class="nav-item"><a href="cart" class="cart"><span class="ti-bag"></span></a></li>
+                        <li class="nav-item">
+                            <a href="cart" class="cart">
+                                <span class="ti-bag position-relative">
+                                    <span class="badge position-absolute">{{ Session::has('cart') ? Session::get('cart')->totalQty : '' }}</span>
+                                </span>
+                            </a>
+                        </li>
 
                         <li class="nav-item">
                             <button class="search"><span class="lnr lnr-magnifier" id="search"></span></button>

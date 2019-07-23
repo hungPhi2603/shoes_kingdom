@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use App\Product;
 use Illuminate\Http\Request;
 use App\Category;
-use App\Product_image;
+use App\Cart;
+use Illuminate\Support\Facades\Session;
 
 class PageController extends Controller
 {
@@ -27,39 +28,14 @@ class PageController extends Controller
         return view('pages.productDetail', compact('product')/*['product'=>$product]*/);
     }
 
-    function postCreate(Request $request) {
-        $this->validate($request, [
-            'name'=>'required'
-        ]);
+    function getAddToCart(Request $request, $id) {
+        $product= Product::find($id);
+        $oldCart= Session::has('cart') ? Session::get('cart') : null;
+        $cart= new Cart($oldCart);
+        $cart->add($product, $product->id);
 
-        $category= new Category;
-        $category->name= $request->name;
-
-        $category->save();
-        return redirect('admin/category/create')->with('alert', 'Creation successfully!');
-    }
-
-    function edit($id) {
-        $category= Category::find($id);
-        return view('admin.category.edit', ['category'=>$category]);
-    }
-
-    function update(Request $request, $id) {
-        $category= Category::find($id);
-        $this->validate($request, [
-            'name'=>'required'
-        ]);
-
-
-        $category->name= $request->name;
-        $category->save();
-
-        return redirect('admin/category')->with('alert', 'Creation successfully!');
-    }
-
-    function delete($id) {
-        $category= Category::find($id);
-        $category->delete();
-        return redirect('admin/category');
+        $request->session()->put('cart', $cart);
+//        dd($request->session()->get('cart'));
+        return redirect('product/'.$product->id);
     }
 }

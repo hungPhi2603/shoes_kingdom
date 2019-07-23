@@ -104,9 +104,10 @@ Route::group(['prefix'=>'admin', 'middleware'=> 'checkAdmin'], function() {
 
 Route::get('/home', 'PageController@home');
 Route::get('/product/{id}', 'PageController@productDetail');
+
+Route::get('/add-to-cart/{id}', 'PageController@getAddToCart');
+
 Route::get('/ajax/quan/{id}', 'AjaxController@getQuantity');
 Route::get('/ajax/quan_max/{id}', 'AjaxController@getQuantityMax');
 
-//Auth::routes();
 
-//Route::get('/home', 'HomeController@index')->name('home');

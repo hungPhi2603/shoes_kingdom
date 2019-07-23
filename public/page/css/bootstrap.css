@@ -4986,11 +4986,11 @@ input[type=submit].btn-block {
     padding: .25em .4em;
     font-size: 75%;
     font-weight: 700;
-    line-height: 1;
+    /* line-height: 1; */
     text-align: center;
     white-space: nowrap;
     vertical-align: baseline;
-    border-radius: .25rem
+    border-radius: 1.25rem;
 }
 
 .badge:empty {
@@ -5069,8 +5069,9 @@ input[type=submit].btn-block {
 }
 
 .badge-danger {
-    color: #fff;
-    background-color: #dc3545
+    /* color: #fff; */
+    color: white;
+    /* background-color: #dc3545; */
 }
 
 .badge-danger[href]:focus,
@@ -7584,7 +7585,10 @@ button.bg-dark:hover {
 }
 
 .position-absolute {
-    position: absolute !important
+    position: absolute !important;
+    top: -45%;
+    /* right: 48%; */
+    left: 80%;
 }
 
 .position-fixed {

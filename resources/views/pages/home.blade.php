@@ -201,7 +201,7 @@
                                 </div>
                                 <div class="prd-bottom">
 
-                                    <a href="" class="social-info">
+                                    <a href="add-to-cart/{{ $lstPr->id }}" class="social-info">
                                         <span class="ti-bag"></span>
                                         <p class="hover-text">add to bag</p>
                                     </a>

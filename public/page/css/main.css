@@ -1144,8 +1144,9 @@ h1, h2, h3, h4, h5, h6 {
             display: none; } }
       .header_area .navbar .nav.navbar-nav.navbar-right li span {
         color: #222222;
-        line-height: 80px;
-        font-weight: 500; }
+        line-height: 10px;
+        font-weight: 500;
+        }
     .header_area .navbar .nav.navbar-nav.navbar-right .search {
       background: transparent;
       border: 0;

@@ -1144,7 +1144,7 @@ h1, h2, h3, h4, h5, h6 {
             display: none; } }
       .header_area .navbar .nav.navbar-nav.navbar-right li span {
         color: #222222;
-        line-height: 10px;
+        line-height: 80px;
         font-weight: 500;
         }
     .header_area .navbar .nav.navbar-nav.navbar-right .search {
@@ -3936,7 +3936,9 @@ label {
     padding: 0px 38px;
     text-transform: uppercase;
     margin-right: 10px;
-    border-radius: 5px; }
+    border-radius: 5px;
+    border: none;
+    }
   .s_product_text .card_area .icon_btn {
     position: relative;
     height: 40px;
@@ -4362,7 +4364,8 @@ label {
     padding: 0px 30px;
     line-height: 38px;
     text-transform: uppercase;
-    border-radius: 0; }
+    border-radius: 0;
+    }
     .cart_inner .table tbody tr.out_button_area .checkout_btn_inner .primary-btn:hover:before {
       left: 240px; }
 

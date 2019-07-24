@@ -7,6 +7,7 @@ use App\Product_image;
 use App\Product_status;
 use Illuminate\Http\Request;
 use App\Product;
+use Illuminate\Support\Facades\Session;
 
 class AjaxController extends Controller
 {
@@ -14,4 +15,5 @@ class AjaxController extends Controller
         $status= Product_status::find($id);
         echo $status->quantity_available;
     }
+
 }

@@ -29,13 +29,30 @@ class PageController extends Controller
     }
 
     function getAddToCart(Request $request, $id) {
+        $this->validate($request, [
+            'status'=>'required'
+        ]);
         $product= Product::find($id);
         $oldCart= Session::has('cart') ? Session::get('cart') : null;
+        $size_id= $request->status;
         $cart= new Cart($oldCart);
-        $cart->add($product, $product->id);
+        $cart->add($product, $product->id, $size_id);
 
         $request->session()->put('cart', $cart);
 //        dd($request->session()->get('cart'));
         return redirect('product/'.$product->id);
+    }
+
+    function getCart() {
+        if (!Session::has('cart')) {
+            return view('pages.shoppingCart');
+        }
+        $oldCart= Session::get('cart');
+        $cart= new Cart($oldCart);
+        return view('pages.shoppingCart', ['products'=> $cart->items, 'totalPrice'=> $cart->totalPrice] );
+    }
+
+    function getAllCart() {
+        dd(Session::get('cart'));
     }
 }

@@ -4990,7 +4990,7 @@ input[type=submit].btn-block {
     text-align: center;
     white-space: nowrap;
     vertical-align: baseline;
-    border-radius: 1.25rem;
+    border-radius: 0.25rem;
 }
 
 .badge:empty {
@@ -7586,8 +7586,9 @@ button.bg-dark:hover {
 
 .position-absolute {
     position: absolute !important;
-    top: -45%;
+    /* top: -160%; */
     /* right: 48%; */
+    bottom: -30px;
     left: 80%;
 }
 

@@ -38,7 +38,7 @@
                             <del><h5 class="text-danger">{{ number_format($product->unit_price) }} ₫</h5></del>
                         @endif
 
-                        <form action="" method="post">
+                        <form action="add-to-cart/{{ $product->id }}" method="post">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <div class="form-group">
                                 <div>
@@ -52,20 +52,33 @@
                                     </div>
                                 </div>
                             </div>
+                                                            @if(count($errors)>0)
+                                                                <div class="alert alert-danger">
+                                                                    @foreach($errors->all() as $err)
+                                                                        {{$err}}<br>
+                                                                    @endforeach
+                                                                </div>
+                                                            @endif
+
+                                                            @if(session('alert'))
+                                                                <div class="alert alert-success">
+                                                                    {{session('alert')}}
+                                                                </div>
+                                                            @endif
                             <div class="form-group">
                                 <label><h6>Trạng thái: </h6></label> <span class="ml-2">Còn <b><span id="quan">{{ $product->product_status()->first()->quantity_available }}</span></b> sản phẩm</span>
                             </div>
 
-                            <div class="product_count">
+                            {{--<div class="product_count">
                                 <label for="qty">Quantity:</label>
                                 <input type="text" name="qty" id="sst" maxlength="12" value="1" title="Quantity:" class="input-text qty">
                                 <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
                                         class="increase items-count" type="button"><i class="lnr lnr-chevron-up"></i></button>
                                 <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) &amp;&amp; sst > 0 ) result.value--;return false;"
                                         class="reduced items-count" type="button"><i class="lnr lnr-chevron-down"></i></button>
-                            </div>
+                            </div>--}}
                             <div class="card_area d-flex align-items-center">
-                                <a class="primary-btn" href="add-to-cart/{{ $product->id }}">Add to Cart</a>
+                                <input class="primary-btn" type="submit" value="Add to Cart"></input>
                                 <a class="icon_btn" href="#"><i class="lnr lnr lnr-heart"></i></a>
                             </div>
                         </form>
@@ -193,17 +206,10 @@
         $(document).ready(function() {
             $('#gr-size').children().change(function () {
                 let status_id= $(this).children().val();
-                let data= null;
-                $.get('ajax/quan/'+status_id, function (dat) {
-                    data= dat;
+                $.get('ajax/quan/'+status_id, function (data) {
                     $('#quan').html(data);                                          //print available quantity
                     $('#sst').val('1');                                             //set default value on change
-                    /*console.log(data, typeof data);        //30
-                    $('#sst').on('input', function(){                      //keep selected quantity in range
-                        console.log(data, typeof data+"2");
-
-                    });*/
-                })
+                });
             });
         })
 

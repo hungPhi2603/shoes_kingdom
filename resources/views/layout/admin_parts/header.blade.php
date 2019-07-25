@@ -103,6 +103,7 @@
                     <li class="pX-20 pY-15 ta-c bdT"><span><a href="email.html" class="c-grey-600 cH-blue fsz-sm td-n">View All Email <i class="fs-xs ti-angle-right mL-10"></i></a></span></li>
                 </ul>
             </li>
+            @if(Auth::check())
             <li class="dropdown">
                 <a href="" class="dropdown-toggle no-after peers fxw-nw ai-c lh-1" data-toggle="dropdown">
                     <div class="peer mR-10"><img class="w-2r bdrs-50p" src="storage/upload/user/{{ Auth::user()->avatar }}" alt=""></div>
@@ -116,6 +117,7 @@
                     <li><a href="admin/logout" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700"><i class="ti-power-off mR-10"></i> <span>Logout</span></a></li>
                 </ul>
             </li>
+            @endif
         </ul>
     </div>
 </div>

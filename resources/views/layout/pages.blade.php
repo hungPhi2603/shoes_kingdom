@@ -39,7 +39,7 @@
 @include('layout.pages_parts.header')
 <!-- End Header Area -->
 
-@yield('content');
+@yield('content')
 
 <!-- start footer Area -->
 @include('layout.pages_parts.footer')

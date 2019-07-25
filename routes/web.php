@@ -14,7 +14,7 @@ Route::get('admin/login', 'UserController@getLoginAdmin')->name('login');
 Route::post('admin/login', 'UserController@postLoginAdmin');
 Route::get('admin/logout', 'UserController@getLogoutAdmin')->name('logout');
 
-Route::group(['prefix'=>'admin', 'middleware'=> 'checkAdmin'], function() {
+Route::group(['prefix'=>'admin'/*, 'middleware'=> 'checkAdmin'*/], function() {
     Route::group(['prefix'=>'user'], function() {
         Route::get('/', 'UserController@getList');
         Route::get('/list', 'UserController@getList');
@@ -102,6 +102,7 @@ Route::group(['prefix'=>'admin', 'middleware'=> 'checkAdmin'], function() {
 });
 
 
+Route::get('/', 'PageController@home');
 Route::get('/home', 'PageController@home');
 Route::get('/product/{id}', 'PageController@productDetail');
 
@@ -109,7 +110,15 @@ Route::post('/add-to-cart/{id}', 'PageController@getAddToCart');
 Route::get('/shopping-cart', 'PageController@getCart');
 Route::get('/cart', 'PageController@getAllCart');
 
-Route::get('/ajax/quan/{id}', 'AjaxController@getQuantity');
-//Route::get('/ajax/quan_max/{id}', 'AjaxController@getQuantityMax');
+Route::get('/login', 'PageController@getLogin');
+Route::post('/login', 'PageController@postLogin');
+Route::get('/logout', 'PageController@getLogout');
 
+Route::get('/register', 'PageController@getRegistration');
+Route::post('/register', 'PageController@postRegistration');
+
+Route::get('/ajax/quan/{id}', 'AjaxController@getQuantity');
+
+Route::get('/auth/redirect/{provider}', 'SocialController@redirect');
+Route::get('/callback/{provider}', 'SocialController@callback');
 

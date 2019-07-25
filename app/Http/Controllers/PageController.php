@@ -6,6 +6,7 @@ use App\Product;
 use Illuminate\Http\Request;
 use App\Category;
 use App\Cart;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
 class PageController extends Controller
@@ -14,13 +15,18 @@ class PageController extends Controller
     {
         $category= Category::all();
         $productSaleOff= Product::whereColumn('unit_price', '>', 'promotion_price')->take(9)->get();
+        $lastestProducts= Product::all()->sortByDesc('id')->take(8);
         view()->share('category', $category);
         view()->share('productSaleOff', $productSaleOff);
+        view()->share('lastestProducts', $lastestProducts);
+
+        if (Auth::check()) {
+            view()->share('user', Auth::user());
+        }
     }
 
     function home() {
-        $lastestProducts= Product::all()->sortByDesc('id')->take(8);
-        return view('pages.home', ['lastestProducts'=>$lastestProducts]);
+        return view('pages.home');
     }
 
     function productDetail($id) {
@@ -54,5 +60,29 @@ class PageController extends Controller
 
     function getAllCart() {
         dd(Session::get('cart'));
+    }
+
+    function getLogin() {
+        return view('pages.login');
+    }
+
+    function postLogin(Request $request) {
+        $this->validate($request, [
+            'email'=> 'required|email',
+            'password'=> 'required'
+        ]);
+        if (Auth::attempt(['email'=>$request->email, 'password'=>$request->password])) {
+            return redirect('/home');
+        }
+        else return redirect('/login')->with('alert', 'Email hoặc mật khẩu không chính xác');
+    }
+
+    function getLogout() {
+        Auth::logout();
+        return redirect('home');
+    }
+
+    function getRegistration() {
+        return view('pages.registration');
     }
 }

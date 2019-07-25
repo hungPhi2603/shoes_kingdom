@@ -26,9 +26,14 @@
                             <a href="user" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                                aria-expanded="false"><span class="ti-user"></span></a>
                             <ul class="dropdown-menu">
-                                <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
-                                <li class="nav-item"><a class="nav-link" href="tracking.html">Tracking</a></li>
-                                <li class="nav-item"><a class="nav-link" href="elements.html">Elements</a></li>
+                                @if(Auth::check())
+                                    <li class="nav-item"><a class="nav-link" href="login.html">{{ Auth::user()->name }}</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="wishlist/{{ Auth::user()->id }}">Danh sách yêu thích</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="logout">Đăng xuất</a></li>
+                                @else
+                                    <li class="nav-item"><a class="nav-link" href="login">Đăng nhập</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="register">Đăng ký</a></li>
+                                @endif
                             </ul>
                         </li>
 

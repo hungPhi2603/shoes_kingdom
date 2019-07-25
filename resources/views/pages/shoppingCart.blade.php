@@ -1,7 +1,6 @@
 @extends('layout.pages')
 
 @section('content')
-
     <section class="banner-area organic-breadcrumb">
         <div class="container">
             <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
@@ -15,7 +14,9 @@
             </div>
         </div>
     </section>
-    <section class="cart_area">
+    @if(Session::has('cart'))
+
+        <section class="cart_area">
         <div class="container">
             <div class="cart_inner">
                 <div class="table-responsive">
@@ -115,4 +116,34 @@
             </div>
         </div>
     </section>
+    @else
+        <section class="cart_area">
+            <div class="container">
+                <div class="cart_inner">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th scope="col">Sản Phẩm</th>
+                                <th scope="col">Kích Cỡ</th>
+                                <th scope="col">Giá</th>
+                                <th scope="col">Số Lượng</th>
+                                <th scope="col">Tổng</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr class="justify-content-between">
+                                <td class="row">
+                                    No item in cart
+                                </td>
+
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    @endif
 @endsection

@@ -14,7 +14,7 @@ Route::get('admin/login', 'UserController@getLoginAdmin')->name('login');
 Route::post('admin/login', 'UserController@postLoginAdmin');
 Route::get('admin/logout', 'UserController@getLogoutAdmin')->name('logout');
 
-Route::group(['prefix'=>'admin'/*, 'middleware'=> 'checkAdmin'*/], function() {
+Route::group(['prefix'=>'admin', 'middleware'=> 'checkAdmin'], function() {
     Route::group(['prefix'=>'user'], function() {
         Route::get('/', 'UserController@getList');
         Route::get('/list', 'UserController@getList');

@@ -105,8 +105,10 @@ Route::group(['prefix'=>'admin', 'middleware'=> 'checkAdmin'], function() {
 Route::get('/', 'PageController@home');
 Route::get('/home', 'PageController@home');
 Route::get('/product/{id}', 'PageController@productDetail');
+Route::get('/category/{id}', 'PageController@getProductByCategory');
 
 Route::post('/add-to-cart/{id}', 'PageController@getAddToCart');
+Route::get('/del-item/{id1}/{id2}', 'PageController@getDelItem');
 Route::get('/shopping-cart', 'PageController@getCart');
 Route::get('/cart', 'PageController@getAllCart');
 

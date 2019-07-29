@@ -178,7 +178,7 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-6 text-center">
                         <div class="section-title">
-                            <h1>Latest Products</h1>
+                            <h1>Sản phẩm mới nhất</h1>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
                                 dolore
                                 magna aliqua.</p>
@@ -203,15 +203,15 @@
 
                                     <a href="add-to-cart/{{ $lstPr->id }}" class="social-info">
                                         <span class="ti-bag"></span>
-                                        <p class="hover-text">add to bag</p>
+                                        <p class="hover-text">Thêm vào giỏ hàng</p>
                                     </a>
                                     <a href="" class="social-info">
                                         <span class="lnr lnr-heart"></span>
-                                        <p class="hover-text">Wishlist</p>
+                                        <p class="hover-text">Yêu thích</p>
                                     </a>
                                     <a href="product/{{ $lstPr->id }}" class="social-info">
                                         <span class="lnr lnr-move"></span>
-                                        <p class="hover-text">view more</p>
+                                        <p class="hover-text">Chi tiết</p>
                                     </a>
                                 </div>
                             </div>
@@ -554,7 +554,7 @@
                                 <h4>{{ $lstPr->title }}</h4>
                                 <div class="add-bag d-flex align-items-center justify-content-center">
                                     <a class="add-btn" href=""><span class="ti-bag"></span></a>
-                                    <span class="add-text text-uppercase">Add to Bag</span>
+                                    <span class="add-text text-uppercase">Thêm vào giỏ hàng</span>
                                 </div>
                             </div>
                         </div>

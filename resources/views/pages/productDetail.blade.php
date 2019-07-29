@@ -35,7 +35,7 @@
                         <h3>{{  $product->title }}</h3>
                         <h2>{{ number_format($product->promotion_price) }} ₫</h2>
                         @if($product->unit_price > $product->promotion_price)
-                            <del><h5 class="text-danger">{{ number_format($product->unit_price) }} ₫</h5></del>
+                            <del><h5 class="text-danger">{{ number_format($product->unit_price) }} </h5></del>
                         @endif
 
                         <form action="add-to-cart/{{ $product->id }}" method="post">

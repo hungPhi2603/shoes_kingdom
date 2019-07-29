@@ -40,7 +40,7 @@ class UserController extends Controller
         if ($request->hasFile('avatar')) {
             $file= $request->file('avatar');
             if ($file->isValid()) {
-                $path= $file->store('public/upload/user');
+                $path= $file->store('public/upload/user');      //directory in storage folder, not public/storage/...
                 $user->avatar= substr($path, 19); //19 is start position of file name
             }
         }

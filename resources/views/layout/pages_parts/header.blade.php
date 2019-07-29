@@ -16,7 +16,7 @@
                         <li class="nav-item active"><a class="nav-link" href="home">Home</a></li>
                         @foreach( $category as $cate)
                             <li class="nav-item submenu">
-                                <a href="category/{{ changeTitle($cate->name) }}" class="nav-link" role="button" aria-haspopup="true" aria-expanded="false">{{ $cate->name }}</a>
+                                <a href="category/{{ $cate->id }}" class="nav-link" role="button" aria-haspopup="true" aria-expanded="false">{{ $cate->name }}</a>
                             </li>
                         @endforeach
                         <li class="nav-item"><a class="nav-link" href="contact">Contact</a></li>
@@ -27,7 +27,7 @@
                                aria-expanded="false"><span class="ti-user"></span></a>
                             <ul class="dropdown-menu">
                                 @if(Auth::check())
-                                    <li class="nav-item"><a class="nav-link" href="login.html">{{ Auth::user()->name }}</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#">{{ Auth::user()->name }}</a></li>
                                     <li class="nav-item"><a class="nav-link" href="wishlist/{{ Auth::user()->id }}">Danh sách yêu thích</a></li>
                                     <li class="nav-item"><a class="nav-link" href="logout">Đăng xuất</a></li>
                                 @else

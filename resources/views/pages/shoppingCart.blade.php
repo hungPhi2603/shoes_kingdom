@@ -28,6 +28,7 @@
                             <th scope="col">Giá</th>
                             <th scope="col">Số Lượng</th>
                             <th scope="col">Tổng</th>
+                            <th scope="col"></th>
                         </tr>
                         </thead>
                         <tbody>
@@ -48,12 +49,11 @@
                                 <h5>{{ $pr['item']->product_status()->find($pr['size_id'])->size }}</h5>
                             </td>
                             <td>
-                                <h5>{{ $pr['item']->promotion_price }}</h5>
+                                <h5>{{ number_format($pr['item']->promotion_price) }}</h5>
                             </td>
                             <td>
                                 <div class="product_count">
-                                    <input type="text" name="qty" id="sst" maxlength="12" value="{{ $pr['qty'] }}" title="Quantity:"
-                                           class="input-text qty">
+                                    <input type="text" name="qty" id="sst" maxlength="12" value="{{ $pr['qty'] }}" title="Quantity:" class="input-text qty" readonly>
                                     <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
                                             class="increase items-count" type="button"><i class="lnr lnr-chevron-up"></i></button>
                                     <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) &amp;&amp; sst > 0 ) result.value--;return false;"
@@ -61,9 +61,16 @@
                                 </div>
                             </td>
                             <td>
-                                <h5>{{ $pr['price'] }}</h5>
+                                <h5>{{ number_format($pr['price']) }}</h5>
+                            </td>
+                            <td>
+                                <a href="del-item/{{ $pr['item']->id }}/{{ $pr['item']->product_status()->find($pr['size_id'])->id }}" class="social-info">
+                                    <span class="ti-delete"></span>
+                                    <p class="hover-text">Xóa</p>
+                                </a>
                             </td>
                         </tr>
+
                         @endforeach
                         <tr class="bottom_button">
                             <td>
@@ -77,7 +84,7 @@
                             <td>
                                 <div class="cupon_text d-flex align-items-center float-right">
                                     <input type="text" placeholder="Mã giảm giá">
-                                    <a class="primary-btn" href="#">Áp Dụng</a>
+                                    <a class="primary-btn" href="">Áp Dụng</a>
                                 </div>
                             </td>
                         </tr>
@@ -95,7 +102,7 @@
                                 <h5>Tổng hóa đơn</h5>
                             </td>
                             <td>
-                                <h5>{{ $totalPrice }}</h5>
+                                <h5>{{ number_format($totalPrice) }}</h5>
                             </td>
                         </tr>
 
@@ -105,7 +112,7 @@
                             <td></td>
                             <td>
                                 <div class="checkout_btn_inner d-flex align-items-center">
-                                    <a class="gray_btn" href="#">Tiếp Tục Mua Hàng</a>
+                                    <a class="gray_btn" href="category/1">Tiếp Tục Mua Hàng</a>
                                     <a class="primary-btn" href="#">Thanh Toán</a>
                                 </div>
                             </td>
@@ -133,7 +140,7 @@
                             </thead>
                             <tbody>
                             <tr class="justify-content-between">
-                                <td class="row">
+                                <td class="row ml-3">
                                     No item in cart
                                 </td>
 

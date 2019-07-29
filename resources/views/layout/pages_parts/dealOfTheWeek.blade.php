@@ -1,9 +1,9 @@
-<section class="related-product-area section_gap_bottom">
+<section class="related-product-area section_gap">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-6 text-center">
                 <div class="section-title">
-                    <h1>Deals of the Week</h1>
+                    <h1>Đang giảm giá</h1>
                     <p>These products are being discounted. Don't miss the chance to take some good deals</p>
                 </div>
             </div>

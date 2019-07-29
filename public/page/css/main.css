@@ -3321,7 +3321,8 @@ label {
   padding-left: 32px; }
 
 .sidebar-filter {
-  margin-top: 50px; }
+  /* margin-top: 50px; */
+  }
   .sidebar-filter .top-filter-head {
     line-height: 60px;
     background: #828bb3;
@@ -4188,7 +4189,8 @@ label {
   padding-top: 30px;
   padding-bottom: 30px;
   vertical-align: middle;
-  align-self: center; }
+  align-self: center;
+  }
   .cart_inner .table tbody tr td .media .d-flex {
     padding-right: 30px; }
     .cart_inner .table tbody tr td .media .d-flex img {

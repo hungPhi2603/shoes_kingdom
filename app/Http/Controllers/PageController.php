@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Product;
+use DemeterChain\C;
 use Illuminate\Http\Request;
 use App\Category;
 use App\Cart;
@@ -34,6 +35,12 @@ class PageController extends Controller
         return view('pages.productDetail', compact('product')/*['product'=>$product]*/);
     }
 
+    function getProductByCategory($id) {
+        $category= Category::find($id);
+        $products= Product::where('category_id', $id)->get();
+        return view('pages.productByCategory', ['products'=> $products, 'cate'=> $category]);
+    }
+
     function getAddToCart(Request $request, $id) {
         $this->validate($request, [
             'status'=>'required'
@@ -47,6 +54,19 @@ class PageController extends Controller
         $request->session()->put('cart', $cart);
 //        dd($request->session()->get('cart'));
         return redirect('product/'.$product->id);
+    }
+
+    function getDelItem($product_id, $size_id) {
+        $oldCart= Session::has('cart') ? Session::get('cart') : null;
+        $cart= new Cart($oldCart);
+        $cart->removeItem($product_id, $size_id);
+        if (count($cart->items) > 0){
+            Session::put('cart', $cart);
+        } else {
+            Session::forget('cart');
+        }
+
+        return redirect()->back();
     }
 
     function getCart() {

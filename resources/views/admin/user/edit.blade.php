@@ -73,17 +73,21 @@
                             <div class="col-md-6 mb-3">
                                 <label><h6>Role: </h6></label><br>
                                 <label class="radio-inline">
-                                    <input type="radio" name="role" value="user" checked="">User
+                                    <input type="radio" name="role" value="user"
+                                    <?php if($user->role === 'user') echo 'checked= ""'?>
+                                    >User
                                 </label>
                                 <label class="radio-inline">
-                                    <input type="radio" name="role" value="admin">Admin
+                                    <input type="radio" name="role" value="admin"
+                                    <?php if($user->role === 'admin') echo 'checked= """'?>
+                                    >Admin
                                 </label>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-md-6 mb-3">
                                 <label for="validationCustom01"><h6>Avatar</h6></label>
-                                <img src="{{--upload/user/{{ $user->avatar }}--}}{{ asset('storage/upload/user/'.$user->avatar) }}" alt="" width="200px"><br><br>
+                                <img src="{{ asset('storage/upload/user/'.$user->avatar) }}" alt="" width="200px"><br><br>
                                 <input type="file" class="form-control" id="validationCustom01" name="avatar" value="{{ $user->avatar }}">
                             </div>
                         </div>

@@ -24,7 +24,7 @@
                                         <th>Promotion price</th>
                                         <th>Description</th>
                                         <th>Category</th>
-                                        <th>Action</th>
+                                        <th>Actionnnnnnnnnnn</th>
                                         <th>Detail</th>
                                     </tr>
                                 </thead>
